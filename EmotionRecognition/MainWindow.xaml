@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EmotionRecognition"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="EmotionRecognition" Height="600" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
+        <ComboBox x:Name="videoSourceComboBox" Margin="10" HorizontalAlignment="Left" Width="250">
+            <!-- Відеоджерела будуть заповнюватися кодом C# -->
+        </ComboBox>
+
+        <Image x:Name="cameraImage" Grid.Row="1" Stretch="Uniform" />
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <TextBlock x:Name="emotionLabel" Grid.Row="1" Margin="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="16" />
+            <Button x:Name="startButton" Content="Start" Margin="0,0,10,0" Width="100" Click="StartButton_Click" />
+            <Button x:Name="stopButton" Content="Stop" Width="100" Click="StopButton_Click" />
+        </StackPanel>
     </Grid>
 </Window>
